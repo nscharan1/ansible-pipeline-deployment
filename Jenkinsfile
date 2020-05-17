@@ -4,7 +4,7 @@ pipeline {
  stages {
   stage('Installing tomcat') {
   steps {
-  ansiblePlaybook(credentialsId: 'pri', inventory: '/opt/jenkins_tomcat', playbook: 'site.yml') 
+  ansiblePlaybook(credentialsId: 'pri', inventory: '/opt/jenkins_tomcat/', playbook: 'site.yml') 
   
   }
   }
