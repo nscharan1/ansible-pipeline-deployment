@@ -4,7 +4,7 @@ pipeline {
  stages {
   stage('Installing tomcat') {
   steps {
-  sh 'ansiblePlaybook become: true, installation: 'Ansible', inventory: '/opt/jenkins_tomcat/', playbook: '/opt/jenkins_tomcat/', sudo: true'
+  sh 'ansiblePlaybook become: true, installation: 'Ansible', inventory: '/opt/jenkins_tomcat/inventory', playbook: '/opt/jenkins_tomcat/site.yml', sudo: true'
   }
   }
 
