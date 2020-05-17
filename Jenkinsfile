@@ -4,7 +4,7 @@ pipeline {
  stages {
   stage('Installing tomcat') {
   steps {
-  sh 'ansible-playbook -i /opt/jenkins_tomcat/inventory site.yml'
+  sh 'ansible-playbook -i /opt/jenkins_tomcat/inventory /opt/jenkins_tomcat/site.yml'
   }
   }
 
@@ -13,7 +13,7 @@ pipeline {
   steps {
   sh 'wget http://3.84.218.206:8081/nexus/content/repositories/releases/in/javahome/simple-app/1.0/simple-app-1.0.war'
   
-  sh 'ansible-playbook -i /opt/jenkins_tomcat/inventory deplyoment.yml '
+  sh 'ansible-playbook -i /opt/jenkins_tomcat/inventory /opt/jenkins_tomcat/deplyoment.yml '
   
   }
   }
