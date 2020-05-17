@@ -7,7 +7,6 @@ pipeline {
   sh 'ansible-playbook /opt/jenkins_tomcat/site.yml'
   }
   }
- }
 
   stage('Deploying WAR') {
  
@@ -18,7 +17,6 @@ pipeline {
   
   }
   }
- 
- 
- 
+ }
+
 }
