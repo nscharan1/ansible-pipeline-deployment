@@ -15,9 +15,7 @@ pipeline {
   stage('Deploying WAR') {
    steps {
    sh 'wget http://3.84.218.206:8081/nexus/content/repositories/releases/in/javahome/simple-app/1.0/simple-app-1.0.war'
-   ansiblePlaybook(
-                    inventory: '/opt/jenkins_tomcat/inventory',
-                    playbook: '/opt/jenkins_tomcat/deployment.yml'
+   sh 'ansible-playbook -i /opt/jenkins_tomcat/inventory /opt/jenkins_tomcat/deployment'
   
   }
   }
