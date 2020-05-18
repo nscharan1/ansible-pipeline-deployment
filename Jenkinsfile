@@ -5,7 +5,7 @@ pipeline {
   stage('Deploy') {
             steps {
                 echo '> Deploying the application ...'
-                sh 'ansible-playbook /opt/jenkins_tomcat/site.yml -i /opt/jenkins_tomcat/inventory --user'
+                sh 'ansible-playbook /opt/jenkins_tomcat/site.yml -i /opt/jenkins_tomcat/inventory --private-key /opt/jenkins_tomcat/keys/pri'
             }
         }
 
