@@ -6,8 +6,8 @@ pipeline {
             steps {
                 echo '> Deploying the application ...'
                 ansiblePlaybook(
-                  inventory: '/opt/jenkins_tomcat/inventory'
-                  playbook: '/opt/jenkins_tomcat/site.yml'
+                  inventory: '/opt/jenkins_tomcat/inventory',
+                  playbook: '/opt/jenkins_tomcat/site.yml',
                   disableHostKeyChecking: true
                 )
             }
