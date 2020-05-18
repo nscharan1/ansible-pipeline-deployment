@@ -8,7 +8,7 @@ pipeline {
                 ansiblePlaybook(
                     inventory: '/opt/jenkins_tomcat/inventory',
                     playbook: '/opt/jenkins_tomcat/site.yml'
-                    disableHostKeyChecking: true,
+                    disableHostKeyChecking: true
                 )
             }
         }
