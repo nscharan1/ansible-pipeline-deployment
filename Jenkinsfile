@@ -5,9 +5,13 @@ pipeline {
   stage('Deploy') {
             steps {
                 echo '> Deploying the application ...'
-                sh 'ansible-playbook /opt/jenkins_tomcat/site.yml -i /opt/jenkins_tomcat/inventory --private-key /opt/jenkins_tomcat/keys/pri'
+                ansiblePlaybook(
+                  inventory: '/opt/jenkins_tomcat/inventory'
+                  playbook: '/opt/jenkins_tomcat/site.yml'
+                  disableHostKeyChecking: true
+                )
             }
-        }
+  }
 
 
  }
